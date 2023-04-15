@@ -1,0 +1,179 @@
+#!/bin/python
+
+import boto3
+import subprocess
+import os
+
+ec = boto3.client('ec2', region_name= 'us-east-1')
+
+null = open(os.devnull, 'w')
+
+g = '\033[92m'
+e = '\033[0m'
+
+list = []
+addserver = True
+
+def restart():
+  print("Enter server to restart:")
+  print("Zone A:")
+  print("1. i-071b36b756e4784e9")
+  print("2. i-0c6f70699927bc27c")
+  print("3. i-0a8b929f35a075415")
+  print("4. i-01ce159b87d63fbdb")
+  print("5. i-0e932ebadcb67ba6d")
+  print("6. i-09011bc388550f6b0")
+  print("7. i-008ebad17c29c9695")
+  print("Loggers B:")
+  print("8.i-064d6ddf68148b600")
+  print("9.i-0c7fe15fed3091d5a")
+  print("10.i-03f304b9c5a31d8e2")
+  print("11.i-0ef221587bf1bd983")
+  print("12.i-0fcfb2f6ed991891a")
+  print("13.i-04ec9b8171d2d1237")
+  print("Soaks:")
+  print("14.i-0ea01a305cabc43bd")
+  print("15.i-038757c7c18bc7cba")
+  print("16.i-005c5157d977f34f9")
+  print("Loggers A:")
+  print("17.i-07be224e1639a67b6")
+  print("18.i-03d5726b4a72adcb8")
+  print("19.i-05f4418380883a321")
+  print("20.i-0f88e1b3d665ae43d")
+  print("21.i-0ad8d39d70987558f")
+  print("22.i-03282c2c8c236f691")
+
+
+  a = raw_input("Enter: ")
+  list.append(a)
+
+restart()
+
+while addserver == True:
+  server = raw_input("Enter additional server to restart or press Enter to continue: ")
+
+  if server == "":
+    addserver = False
+    print("Restarting {}".format(list))
+  else:
+    list.append(server)
+
+for s in list:
+
+  if s == "1":
+    lg1 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.149', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg1.stdout.read())
+    print("{}i-071b36b756e4784e9{}".format(g,e))
+    print("")
+  elif s == "2":
+    lg2 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.225', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg2.stdout.read())
+    print("{}i-0c6f70699927bc27c{}".format(g,e))
+    print("")
+  elif s == "3":
+    lg3 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.241', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg3.stdout.read())
+    print("{}i-0a8b929f35a075415{}".format(g,e))
+    print("")
+  elif s == "4":
+    lg4 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.53', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg4.stdout.read())
+    print("{}i-01ce159b87d63fbdb{}".format(g,e))
+    print("")
+  elif s == "5":
+    lg5 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.247', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg5.stdout.read())
+    print("{}i-0e932ebadcb67ba6d{}".format(g,e))
+    print("")
+  elif s == "6":
+    lg6 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.9.124', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg6.stdout.read())
+    print("{}i-09011bc388550f6b0{}".format(g,e))
+    print("")
+  elif s == "7":
+    lg7 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.233', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg7.stdout.read())
+    print("{}i-008ebad17c29c9695{}".format(g,e))
+    print("")
+
+elif s == "8":
+    lg8 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.9.124', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg8.stdout.read())
+    print("{}i-064d6ddf68148b600{}".format(g,e))
+    print("")
+  elif s == "9":
+    lg9 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.10.239', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg9.stdout.read())
+    print("{}i-0c7fe15fed3091d5a{}".format(g,e))
+    print("")
+  elif s == "10":
+    lg10 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.9.102', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg10.stdout.read())
+    print("{}i-03f304b9c5a31d8e2{}".format(g,e))
+    print("")
+
+  elif s == "11":
+    lg11 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.9.187', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg11.stdout.read())
+    print("{}i-0ef221587bf1bd983{}".format(g,e))
+    print("")
+  elif s == "12":
+    lg12 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.10.27', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg12.stdout.read())
+    print("{}i-0fcfb2f6ed991891a{}".format(g,e))
+    print("")
+  elif s == "13":
+    lg13 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.8.75', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg13.stdout.read())
+    print("{}i-04ec9b8171d2d1237{}".format(g,e))
+    print("")
+  elif s == "14":
+    lg14 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.11.113', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg14.stdout.read())
+    print("{}i-0ea01a305cabc43bd{}".format(g,e))
+    print("")
+  elif s == "15":
+    lg15 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.14', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg15.stdout.read())
+    print("{}i-038757c7c18bc7cba{}".format(g,e))
+    print("")
+  elif s == "16":
+    lg16 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.30.4.139', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg16.stdout.read())
+    print("{}i-005c5157d977f34f9{}".format(g,e))
+    print("")
+
+elif s == "17":
+    lg17 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.251', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg17.stdout.read())
+    print("{}i-07be224e1639a67b6{}".format(g,e))
+    print("")
+  elif s == "18":
+    lg18 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.176', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg18.stdout.read())
+    print("{}i-03d5726b4a72adcb8{}".format(g,e))
+    print("")
+  elif s == "19":
+    lg19 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.167', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg19.stdout.read())
+    print("{}i-05f4418380883a321{}".format(g,e))
+    print("")
+
+  elif s == "20":
+    lg20 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.110', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg20.stdout.read())
+    print("{}i-0f88e1b3d665ae43d{}".format(g,e))
+    print("")
+  elif s == "21":
+    lg21 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.66', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg21.stdout.read())
+    print("{}i-0ad8d39d70987558f{}".format(g,e))
+    print("")
+  elif s == "22":
+    lg22 = subprocess.Popen(["ssh {ut}@{server} {rc}".format(ut='ubuntu', server='10.55.2.107', rc='sudo /etc/rc.local')], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    print(lg22.stdout.read())
+    print("{}i-03282c2c8c236f691{}".format(g,e))
+    print("")
+  else:
+    print("{}Invalid server {}{}".format(g,s,e))
+    pass
